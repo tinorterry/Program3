@@ -12,7 +12,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Program3GUI.fxml"));
         primaryStage.setTitle("Tuition Manager");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        Scene primaryScene = new Scene(root, 300, 275);
+        primaryScene.getStylesheets().add(getClass().getResource("Program3GUI.css").toExternalForm());
+        primaryStage.setScene(primaryScene);
         primaryStage.show();
     }
 

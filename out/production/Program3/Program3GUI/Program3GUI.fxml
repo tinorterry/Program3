@@ -3,18 +3,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TitledPane prefHeight="200.0" prefWidth="200.0" text="Actions/General Information">
-         <content>
-            <SplitPane dividerPositions="0.3" prefHeight="200.0" prefWidth="200.0">
-               <items>
-                  <VBox prefHeight="174.0" prefWidth="170.0" />
-                  <VBox prefHeight="200.0" prefWidth="100.0" />
-               </items>
-            </SplitPane>
-         </content>
-      </TitledPane>
+      <HBox prefHeight="116.0" prefWidth="572.0">
+         <children>
+               <VBox alignment="TOP_CENTER" prefHeight="174.0" prefWidth="170.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Add" />
+                  <Button mnemonicParsing="false" text="Remove" />
+                  <Button mnemonicParsing="false" text="Print" />
+               </children>
+            </VBox>
+               <VBox prefHeight="200.0" prefWidth="100.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
    </children>
 </VBox>
