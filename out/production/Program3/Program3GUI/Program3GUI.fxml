@@ -12,7 +12,7 @@
                <children>
                   <HBox fx:id="fnameInputHbox" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label fx:id="fnameLabel" text="Label">
+                        <Label fx:id="fnameLabel" text="First Name">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -25,7 +25,7 @@
                   </HBox>
                   <HBox fx:id="lnameHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label fx:id="lnameLabel" text="Label">
+                        <Label fx:id="lnameLabel" text="Last Name">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -38,7 +38,7 @@
                   </HBox>
                   <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Label fx:id="creditsLabel" text="Label">
+                        <Label fx:id="creditsLabel" text="Credits">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
@@ -55,9 +55,62 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </opaqueInsets>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="sectionContainer">
+      <HBox fx:id="typeSpecficHbox" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="sectionContainer">
          <children>
-            <VBox prefHeight="116.0" prefWidth="81.0">
+            <GridPane fx:id="typeSpecificSelectionGrid" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="358.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="117.0" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <RadioButton fx:id="instateRadioButton" mnemonicParsing="false" text="INSTATE">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="studentType" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="outstateRadioButton" mnemonicParsing="false" text="OUTSTATE" toggleGroup="$studentType" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="internationalRadioButton" mnemonicParsing="false" text="INTERNATIONAL" toggleGroup="$studentType" GridPane.rowIndex="2" />
+                  <HBox fx:id="fundsArea" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Funds" />
+                        <TextField />
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="triStateSelectionArea" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="Tri-State: ">
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <RadioButton mnemonicParsing="false" text="Yes">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="triStateRadioGroup" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" text="No" toggleGroup="$triStateRadioGroup" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="exchangeSelectionArea" alignment="CENTER" layoutX="130.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="Exchange: " />
+                        <RadioButton mnemonicParsing="false" text="Yes">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="exchangeRadioGroup" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" text="No" toggleGroup="$exchangeRadioGroup" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <VBox alignment="CENTER_LEFT" prefHeight="116.0" prefWidth="81.0">
                <children>
                   <Button fx:id="addCommandButton" mnemonicParsing="false" text="Add" />
                   <Button fx:id="removeCommandButton" mnemonicParsing="false" text="Remove" />
@@ -65,5 +118,6 @@
                </children>
             </VBox>
          </children></HBox>
+      <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Output Area" />
    </children>
 </VBox>
