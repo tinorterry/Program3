@@ -1,3 +1,10 @@
 .button{
     -fx-pref-width : 59px;
 }
+
+.sectionContainer{
+    -fx-border-style : solid inside;
+    -fx-border-color : gray;
+    -fx-border-radius: 1px;
+    -fx-border-insets: 1px;
+}

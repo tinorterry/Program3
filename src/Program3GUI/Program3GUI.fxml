@@ -1,22 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="116.0" prefWidth="572.0">
+      <HBox fx:id="inforHbox" alignment="TOP_CENTER" prefHeight="116.0" prefWidth="572.0" styleClass="sectionContainer">
          <children>
-               <VBox alignment="TOP_CENTER" prefHeight="174.0" prefWidth="170.0">
+               <VBox id="genInfoVbox" fx:id="genInfoVbox" prefHeight="116.0" prefWidth="402.0">
                <children>
-                  <Button mnemonicParsing="false" text="Add" />
-                  <Button mnemonicParsing="false" text="Remove" />
-                  <Button mnemonicParsing="false" text="Print" />
+                  <HBox fx:id="fnameInputHbox" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="fnameLabel" text="First Name">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="fnameInput" prefHeight="25.0" prefWidth="208.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="lnameHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="lnameLabel" text="Last Name">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="lnameInput" prefHeight="25.0" prefWidth="208.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label fx:id="creditsLabel" text="Credits">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="creditsInput" prefHeight="25.0" prefWidth="208.0" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children></VBox>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </opaqueInsets>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="sectionContainer">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="116.0" prefWidth="81.0">
+               <children>
+                  <Button fx:id="addCommandButton" mnemonicParsing="false" text="Add" />
+                  <Button fx:id="removeCommandButton" mnemonicParsing="false" text="Remove" />
+                  <Button fx:id="printCommandButton" mnemonicParsing="false" text="Print" />
                </children>
             </VBox>
-               <VBox prefHeight="200.0" prefWidth="100.0" />
-         </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" />
+         </children></HBox>
    </children>
 </VBox>
