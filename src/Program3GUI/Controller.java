@@ -72,8 +72,8 @@ public class Controller {
      */
     @FXML
     public void actionWhenAddButtonPressed(ActionEvent event){
-        //- Will check for proper input format and that proper input exists
-        //- Will check if information inputted obeys the rules of type of student selected.
+        //- Will check for proper input format and that proper input exists --> will req additional methods
+        //- Will check if information inputted obeys the rules of type of student selected. --> will req additional methods
         //- Will check if Student is already in list, if not then finally add the student.
 
 
@@ -91,6 +91,46 @@ public class Controller {
         // - Check if inputted information is in correct format (maybe) and that proper input exists
         // - Check if list is empty, if it is will print no student/else go to next step
         // - Check if inputted student exists in list, if yes then remove else print student not in list
+    }
+
+
+    /**
+     * Checks to see if names entered in text fields are there and are in proper format.
+     * @param content The content of the text field being checked
+     * @return true if checks succeed, false otherwise
+     *
+     * @author Rizwan Chowdhury
+     */
+    private boolean checkNameTextFieldContent(String content){
+        // if the field is empty then check fails
+        if(content.equals("")){
+            return false;
+        }
+
+        //check to see how many tokens there are; if more than 1 than too many
+        String[] nameTokens = content.split(" ");
+        if(nameTokens.length > 1){
+            return false;
+        }
+
+        //now the content has passed the tests:
+        return true;
+    }
+
+
+    /**
+     * Will parse the value inputted for credits to see how many credits a student is taking. Take input from the
+     * credits input textfield.
+     *
+     * @param creditString string that holds the number of credits inputted
+     * @return int value of the credits being taken
+     * @throws NumberFormatException if input is not an integer or contains non-numeric characters then this will be thrown
+     *
+     * @author Rizwan Chowdhury
+     */
+    private int parseCreditsValue(String creditString) throws NumberFormatException {
+        int credits = Integer.parseInt(creditString);
+        return credits;
     }
 
 
