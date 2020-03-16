@@ -38,6 +38,41 @@ public class Controller {
     private TextField creditsInput;
 
 
+    /**
+     * Function to clear the gui inputs after each time "Add"/"Remove"/"Print" button is pressed.
+     * @author Rizwan Chowdhury
+     * @author Tin Fung
+     */
+    private void clearGuiInputs(){
+        //needs to be done
+    }
+
+
+    /**
+     * Clear the type specific inputs when user selects different student type: Instate, Outstate, International
+     *
+     * @author Rizwan Chowdhury
+     * @author Tin Fung
+     */
+    @FXML
+    public void clearTypeSpecificInputs(){
+        //needs to be done
+    }
+
+
+    /**
+     * Sets type specific (type-specific = type of student) information for type of student selected based on certain
+     * events. Info such as funds or either exchange or not are set. Events that trigger this are filling out funds or
+     * making selection of exchange or not and etc.
+     *
+     * @param event Actions performed to specify type-specific information
+     * @author Rizwan Chowdhury
+     * @author Tin Fung
+     */
+    @FXML
+    public void setTypeSpecificInfo(ActionEvent event){
+        //needs to be done
+    }
 
     /**
      * Controller Method to disable/enable different sections of student specific information input based on which
@@ -117,6 +152,8 @@ public class Controller {
      */
     @FXML
     public void actionWhenRemoveButtonPressed(ActionEvent event){
+        //needs to be done
+
         // - Check if inputted information is in correct format (maybe) and that proper input exists
         // - Check if list is empty, if it is will print no student/else go to next step
         // - Check if inputted student exists in list, if yes then remove else print student not in list
@@ -169,6 +206,8 @@ public class Controller {
      */
     @FXML
     public void actionWhenPrintButtonPressed(ActionEvent event){
+        //needs to be done
+
         // -Will check if list is empty, if yes then print list empty else go to next line
         // -Will print all the students in list using the StudentList print() function
         // -Will print --end of list-- at the end
