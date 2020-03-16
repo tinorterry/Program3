@@ -46,7 +46,7 @@
                         <TextField fx:id="creditsInput" prefHeight="25.0" prefWidth="208.0" />
                      </children>
                      <padding>
-                        <Insets left="16.0" top="5.0" />
+                        <Insets left="19.0" top="5.0" />
                      </padding>
                   </HBox>
                </children></VBox>
@@ -112,7 +112,7 @@
             </GridPane>
             <VBox alignment="CENTER_LEFT" prefHeight="116.0" prefWidth="81.0">
                <children>
-                  <Button fx:id="addCommandButton" mnemonicParsing="false" text="Add" />
+                  <Button fx:id="addCommandButton" mnemonicParsing="false" onAction="#actionWhenAddButtonPressed" text="Add" />
                   <Button fx:id="removeCommandButton" mnemonicParsing="false" text="Remove" />
                   <Button fx:id="printCommandButton" mnemonicParsing="false" text="Print" />
                </children>

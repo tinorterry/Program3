@@ -2,6 +2,7 @@ package Program3GUI;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
@@ -28,7 +29,14 @@ public class Controller {
     private TextArea outputArea;
 
     @FXML
-    private ToggleGroup exchangeRadioGroup;
+    private TextField fnameInput;
+
+    @FXML
+    private TextField lnameInput;
+
+    @FXML
+    private TextField creditsInput;
+
 
 
     /**
@@ -75,8 +83,29 @@ public class Controller {
         //- Will check for proper input format and that proper input exists --> will req additional methods
         //- Will check if information inputted obeys the rules of type of student selected. --> will req additional methods
         //- Will check if Student is already in list, if not then finally add the student.
+        String fname;
+        String lname;
+        int credits;
 
+        //check if name inputs are correct:
+        String fnameInputString = fnameInput.getText();
+        String lnameInputString = lnameInput.getText();
+        if( (checkNameTextFieldContent(fnameInputString)) && (checkNameTextFieldContent(lnameInputString)) ){
+            fname = fnameInputString;
+            lname = lnameInputString;
+        }
+        else{
+            outputArea.appendText("First/Last name not inputted at all/in correct format.\n");
+            return;
+        }
 
+        //check if credits input is correct
+        try {
+            credits = parseCreditsValue(creditsInput.getText());
+        } catch(NumberFormatException e){
+            outputArea.appendText("Credits must be entered as numbers only (integers).\n");
+            return;
+        }
     }
 
 
