@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Program3GUI.Controller">
    <children>
       <HBox fx:id="inforHbox" alignment="TOP_CENTER" prefHeight="116.0" prefWidth="572.0" styleClass="sectionContainer">
          <children>
@@ -36,7 +36,7 @@
                         <Insets left="10.0" top="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                  <HBox fx:id="creditsHbox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
                         <Label fx:id="creditsLabel" text="Credits">
                            <HBox.margin>
@@ -46,7 +46,7 @@
                         <TextField fx:id="creditsInput" prefHeight="25.0" prefWidth="208.0" />
                      </children>
                      <padding>
-                        <Insets left="10.0" top="5.0" />
+                        <Insets left="16.0" top="5.0" />
                      </padding>
                   </HBox>
                </children></VBox>
@@ -68,14 +68,14 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <RadioButton fx:id="instateRadioButton" mnemonicParsing="false" text="INSTATE">
+                  <RadioButton fx:id="instateRadioButton" mnemonicParsing="false" onAction="#typeSelectionDisabler" text="INSTATE">
                      <toggleGroup>
                         <ToggleGroup fx:id="studentType" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="outstateRadioButton" mnemonicParsing="false" text="OUTSTATE" toggleGroup="$studentType" GridPane.rowIndex="1" />
-                  <RadioButton fx:id="internationalRadioButton" mnemonicParsing="false" text="INTERNATIONAL" toggleGroup="$studentType" GridPane.rowIndex="2" />
-                  <HBox fx:id="fundsArea" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+                  <RadioButton fx:id="outstateRadioButton" mnemonicParsing="false" onAction="#typeSelectionDisabler" text="OUTSTATE" toggleGroup="$studentType" GridPane.rowIndex="1" />
+                  <RadioButton fx:id="internationalRadioButton" mnemonicParsing="false" onAction="#typeSelectionDisabler" text="INTERNATIONAL" toggleGroup="$studentType" GridPane.rowIndex="2" />
+                  <HBox fx:id="fundsArea" alignment="TOP_CENTER" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
                      <children>
                         <Label text="Funds" />
                         <TextField />
@@ -84,7 +84,7 @@
                         <Insets top="5.0" />
                      </padding>
                   </HBox>
-                  <HBox fx:id="triStateSelectionArea" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <HBox fx:id="triStateSelectionArea" alignment="CENTER" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Label text="Tri-State: ">
                            <padding>
@@ -98,7 +98,7 @@
                         <RadioButton mnemonicParsing="false" text="No" toggleGroup="$triStateRadioGroup" />
                      </children>
                   </HBox>
-                  <HBox fx:id="exchangeSelectionArea" alignment="CENTER" layoutX="130.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <HBox fx:id="exchangeSelectionArea" alignment="CENTER" disable="true" layoutX="130.0" layoutY="45.0" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
                         <Label text="Exchange: " />
                         <RadioButton mnemonicParsing="false" text="Yes">
@@ -118,6 +118,6 @@
                </children>
             </VBox>
          </children></HBox>
-      <TextArea prefHeight="200.0" prefWidth="200.0" promptText="Output Area" />
+      <TextArea fx:id="outputArea" prefHeight="200.0" prefWidth="200.0" promptText="Output Area" />
    </children>
 </VBox>

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program3GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program3GUI/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Program3GUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Program3/Program3GUI/Program3GUI.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Program3GUI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program3GUI/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Program3GUI/Program3GUI.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program3GUI/Program3GUI.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,8 +85,8 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/TuitionManager" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/InClassExample" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -201,30 +202,30 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583451615863">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584330283771">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583451615863" />
-    <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1583451459242">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1584330283771" />
+    <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1584329887335">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583451459242" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1584300916511">
+    <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584329887335" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1584335972343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584300916511" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1584300916510">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1584335972343" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1584335972343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584300916510" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1584300916510">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1584335972343" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1584335972342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584300916510" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1584300916510">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1584335972342" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1584335972343">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584300916510" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1584335972343" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1584255635710">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -241,10 +242,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1584255635709" />
-    <state x="163" y="0" key="SettingsEditor" timestamp="1584213633620">
+    <state x="163" y="0" key="SettingsEditor" timestamp="1584324232720">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584213633620" />
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584324232720" />
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1584291536837">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
