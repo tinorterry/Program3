@@ -72,7 +72,7 @@ public class Controller {
      */
     @FXML
     public void actionWhenAddButtonPressed(ActionEvent event){
-        //- Will check for proper input format.
+        //- Will check for proper input format and that proper input exists
         //- Will check if information inputted obeys the rules of type of student selected.
         //- Will check if Student is already in list, if not then finally add the student.
 
@@ -88,7 +88,7 @@ public class Controller {
      */
     @FXML
     public void actionWhenRemoveButtonPressed(ActionEvent event){
-        // - Check if inputted information is in correct format (maybe)
+        // - Check if inputted information is in correct format (maybe) and that proper input exists
         // - Check if list is empty, if it is will print no student/else go to next step
         // - Check if inputted student exists in list, if yes then remove else print student not in list
     }
