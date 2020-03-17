@@ -78,7 +78,7 @@
                   <HBox fx:id="fundsArea" alignment="TOP_CENTER" disable="true" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
                      <children>
                         <Label text="Funds" />
-                        <TextField />
+                        <TextField fx:id="funding" />
                      </children>
                      <padding>
                         <Insets top="5.0" />
@@ -113,7 +113,7 @@
             <VBox alignment="CENTER_LEFT" prefHeight="116.0" prefWidth="81.0">
                <children>
                   <Button fx:id="addCommandButton" mnemonicParsing="false" onAction="#actionWhenAddButtonPressed" text="Add" />
-                  <Button fx:id="removeCommandButton" mnemonicParsing="false" text="Remove" />
+                  <Button fx:id="removeCommandButton" mnemonicParsing="false" onAction="#clearGuiInputs" text="Remove" />
                   <Button fx:id="printCommandButton" mnemonicParsing="false" text="Print" />
                </children>
             </VBox>
