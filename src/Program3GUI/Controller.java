@@ -1,12 +1,9 @@
 package Program3GUI;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TextArea;
 
 /**
  * Controller class used to define and control the functionalities of the GUI. Will coordinate with FXML file.
@@ -14,6 +11,12 @@ import javafx.scene.control.TextArea;
  * @author Tin Fung
  */
 public class Controller {
+
+    //type-specific variables
+    String typeOfStudent;
+    int instateStudentFunds;
+    boolean exchangeStudent;
+    boolean tristateareaStudent;
 
     //following are instances of the fxml elements, using their fxml ids, that will be used
     @FXML
@@ -37,6 +40,16 @@ public class Controller {
     @FXML
     private TextField creditsInput;
 
+    //type-specific elements:
+    @FXML
+    private ToggleGroup studentType;
+
+    @FXML
+    private ToggleGroup triStateRadioGroup;
+
+    @FXML
+    private ToggleGroup exchangeRadioGroup;
+
 
     /**
      * Function to clear the gui inputs after each time "Add"/"Remove"/"Print" button is pressed.
@@ -45,34 +58,37 @@ public class Controller {
      */
     private void clearGuiInputs(){
         //needs to be done
+        // - should clear text fields and de-select any radio/toggle buttons
+        // - should NOT clear output text area
     }
 
 
     /**
      * Clear the type specific inputs when user selects different student type: Instate, Outstate, International
      *
+     * @param event radio button for student type being pressed
+     *
      * @author Rizwan Chowdhury
      * @author Tin Fung
      */
-    @FXML
-    public void clearTypeSpecificInputs(){
+    private void clearTypeSpecificInputs(ActionEvent event){
         //needs to be done
+        // - should : everytime user selects a different option for type of student clear any currently entered type
+        //            specific inputs already placed. For example: if user first clicked Outstate and selected Yes for
+        //            tri-state area and then selected Instate, then should de-select the Yes in tri-state if possible
+
+
     }
 
 
     /**
-     * Sets type specific (type-specific = type of student) information for type of student selected based on certain
-     * events. Info such as funds or either exchange or not are set. Events that trigger this are filling out funds or
-     * making selection of exchange or not and etc.
-     *
-     * @param event Actions performed to specify type-specific information
-     * @author Rizwan Chowdhury
-     * @author Tin Fung
+     * Will deselect all the radio buttons in the given group.
+     * @param groupToBeCleared group for which radio button are to be cleared.
      */
-    @FXML
-    public void setTypeSpecificInfo(ActionEvent event){
-        //needs to be done
+    private void clearRadioButtons(ToggleGroup groupToBeCleared){
+
     }
+
 
     /**
      * Controller Method to disable/enable different sections of student specific information input based on which
@@ -105,6 +121,39 @@ public class Controller {
                 exchangeSelectionArea.setDisable(false);
                 break;
         }
+
+        setStudentType(event);
+    }
+
+
+    /**
+     * Sets type specific (type-specific = type of student) information for type of student selected based on certain
+     * events. Info such as funds or either exchange or not are set. Events that trigger this are filling out funds or
+     * making selection of exchange or not and etc.
+     *
+     * @param event Actions performed to specify type-specific information
+     * @author Rizwan Chowdhury
+     * @author Tin Fung
+     */
+    public void setStudentType(ActionEvent event){
+        //needs to be done
+        // should set the proper variable with information based on user inputs in the type-specific area
+        // the variables will be initialized above, will be in section labeled type-specific variables
+        RadioButton selectedButton  = (RadioButton) event.getSource();
+        switch (selectedButton.getId()){
+            case "instateRadioButton":
+                typeOfStudent = "Instate";
+                break;
+
+            case "outstateRadioButton":
+                typeOfStudent = "Outstate";
+                break;
+
+            case "internationalRadioButton":
+                typeOfStudent = "International";
+                break;
+        }
+
     }
 
 
@@ -141,8 +190,57 @@ public class Controller {
             outputArea.appendText("Credits must be entered as numbers only (integers).\n");
             return;
         }
+
+        //check if proper value for credits input:
+        if(!isGreaterThanZero(credits)){
+            outputArea.appendText("Must take greater than zero credits.\n");
+            return;
+        }
     }
 
+
+    /**
+     * Will call the specific function based on the type of student being added.
+     * @param fname Student's first name
+     * @param lname Student's last name
+     * @param credits Amount of credits student is taking
+     */
+    private void addSpecificTypeStudent(String fname, String lname, int credits){
+
+    }
+
+
+    /**
+     * Will add instate student to the list
+     * @param fname student's first name
+     * @param lname student's last name
+     * @param credits credits the student is taking
+     */
+    private void addInstateStudent(String fname, String lname, int credits){
+
+    }
+
+
+    /**
+     * Will add outstate student to the list
+     * @param fname student's first name
+     * @param lname student's last name
+     * @param credits credits the student is taking
+     */
+    private void addOutstateStudent(String fname, String lname, int credits){
+
+    }
+
+
+    /**
+     * Will add international student to the list
+     * @param fname student's first name
+     * @param lname student's last name
+     * @param credits credits the student is taking
+     */
+    private void addInternationalStudent(String fname, String lname, int credits){
+
+    }
 
     /**
      * Remove student from running list when the Remove button is pressed.
@@ -197,6 +295,17 @@ public class Controller {
     private int parseCreditsValue(String creditString) throws NumberFormatException {
         int credits = Integer.parseInt(creditString);
         return credits;
+    }
+
+
+    /**
+     * Will check if a number inputted is greater than zero or not
+     * @param numericValue number being checked
+     * @return true if is greater than zero, false otherwise.
+     * @author Rizwan Chowdhury
+     */
+    private boolean isGreaterThanZero(int numericValue){
+        return (numericValue>0) ? true:false;
     }
 
 
