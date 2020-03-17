@@ -1,9 +1,13 @@
 package Program3GUI;
 
+import TuitionManager.Instate;
+import TuitionManager.Student;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
+
+import javax.swing.*;
 
 /**
  * Controller class used to define and control the functionalities of the GUI. Will coordinate with FXML file.
@@ -28,8 +32,12 @@ public class Controller {
     @FXML
     private HBox fundsArea;
 
+
     @FXML
     private TextArea outputArea;
+
+    @FXML
+    private TextField funding;
 
     @FXML
     private TextField fnameInput;
@@ -39,8 +47,13 @@ public class Controller {
 
     @FXML
     private TextField creditsInput;
+    @FXML
+    private RadioButton instateRadioButton;
+    @FXML
+    private RadioButton outstateRadioButton;
+    @FXML
+    private RadioButton internationalRadioButton;
 
-    //type-specific elements:
     @FXML
     private ToggleGroup studentType;
 
@@ -56,7 +69,19 @@ public class Controller {
      * @author Rizwan Chowdhury
      * @author Tin Fung
      */
+    @FXML
     private void clearGuiInputs(){
+        fnameInput.clear();
+        lnameInput.clear();
+        creditsInput.clear();
+        funding.clear();
+        instateRadioButton.setSelected(false);
+        outstateRadioButton.setSelected(false);
+        internationalRadioButton.setSelected(false);
+        if(triStateRadioGroup.getSelectedToggle()!=null) triStateRadioGroup.getSelectedToggle().setSelected(false);
+        if(exchangeRadioGroup.getSelectedToggle()!=null) exchangeRadioGroup.getSelectedToggle().setSelected(false);
+
+
         //needs to be done
         // - should clear text fields and de-select any radio/toggle buttons
         // - should NOT clear output text area
@@ -73,6 +98,7 @@ public class Controller {
      */
     private void clearTypeSpecificInputs(ActionEvent event){
         //needs to be done
+        //merged to typeSelectionDisabler
         // - should : everytime user selects a different option for type of student clear any currently entered type
         //            specific inputs already placed. For example: if user first clicked Outstate and selected Yes for
         //            tri-state area and then selected Instate, then should de-select the Yes in tri-state if possible
@@ -86,6 +112,8 @@ public class Controller {
      * @param groupToBeCleared group for which radio button are to be cleared.
      */
     private void clearRadioButtons(ToggleGroup groupToBeCleared){
+        //not used
+        groupToBeCleared.getSelectedToggle().setSelected(false);
 
     }
 
@@ -93,7 +121,7 @@ public class Controller {
     /**
      * Controller Method to disable/enable different sections of student specific information input based on which
      * option (type of student) is selected. Only section corresponding to selected option (Instate, Outstate, International)
-     * will be enabled, others will be disabled.
+     * will be enabled, others will be disabled. It will also clear other types everytime the user selects a different option for type of student clear any currently entered type
      * @param event Toggling of Instate, Outstate, or International to trigger this function.
      * @author Rizwan Chowdhury
      */
@@ -107,18 +135,34 @@ public class Controller {
                 triStateSelectionArea.setDisable(true);
                 exchangeSelectionArea.setDisable(true);
                 fundsArea.setDisable(false);
+                if(triStateRadioGroup.getSelectedToggle()!=null){
+                    triStateRadioGroup.getSelectedToggle().setSelected(false);
+
+                }
+                if(exchangeRadioGroup.getSelectedToggle()!=null){
+                    exchangeRadioGroup.getSelectedToggle().setSelected(false);
+                }
                 break;
 
             case "outstateRadioButton":
                 fundsArea.setDisable(true);
                 exchangeSelectionArea.setDisable(true);
                 triStateSelectionArea.setDisable(false);
+                funding.clear();
+                if(exchangeRadioGroup.getSelectedToggle()!=null){
+                    exchangeRadioGroup.getSelectedToggle().setSelected(false);
+                }
                 break;
 
             case "internationalRadioButton":
                 fundsArea.setDisable(true);
                 triStateSelectionArea.setDisable(true);
                 exchangeSelectionArea.setDisable(false);
+                funding.clear();
+                if(triStateRadioGroup.getSelectedToggle()!=null){
+                    triStateRadioGroup.getSelectedToggle().setSelected(false);
+
+                }
                 break;
         }
 
@@ -217,9 +261,7 @@ public class Controller {
      * @param credits credits the student is taking
      */
     private void addInstateStudent(String fname, String lname, int credits){
-
-    }
-
+     }
 
     /**
      * Will add outstate student to the list
